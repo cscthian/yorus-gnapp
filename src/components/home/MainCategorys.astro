@@ -1,0 +1,47 @@
+---
+import { Image } from 'astro:assets';
+import petDog from '@/assets/pet_dog.png';
+import petCat from '@/assets/pet_cat.png';
+import petBony from '@/assets/pet_bony.png';
+// ui components
+import MainLink from '@/ui/MainLink.astro';
+---
+
+<div class="flex gap-6 mt-8">
+  <div class="flex items-end bg-colorBgCard">
+    <div class="p-4">
+      <h3 class="text-4xl max-w-[150px] mb-6 font-ffPrimary 
+          font-bold text-colorText">Para Perros</h3>
+      <MainLink  link='#' text='Ver Catálogo' />
+    </div>
+    <Image  
+      src={petDog}
+      alt="perrito"
+      class="h-[400px]"
+    />
+  </div>
+  <div class="flex items-end bg-colorBgCard">
+    <div class="p-4">
+      <h3 class="text-4xl max-w-[150px] mb-6 font-ffPrimary 
+      font-bold text-colorText">Para Gatos</h3>
+      <MainLink  link='#' text='Ver Catálogo' />
+    </div>
+    <Image  
+      src={petCat}
+      alt="gatitos"
+      class="h-[400px]"
+    />
+  </div>
+  <div class="flex items-end bg-colorBgCard">
+    <div class="p-4">
+      <h3 class="text-4xl max-w-[150px] mb-6 font-ffPrimary 
+      font-bold text-colorText">Otros Peluditos</h3>
+      <MainLink  link='#' text='Ver Catálogo' />
+    </div>
+    <Image  
+      src={petBony}
+      alt="wonejitos"
+      class="h-[400px] "
+    />
+  </div>
+</div>

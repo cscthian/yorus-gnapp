@@ -1,0 +1,18 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Banner from '@/components/home/Banner.astro';
+import MainCategorys from '@/components/home/MainCategorys.astro';
+import BetSellerProds from '@/components/home/BetSellerProds.astro';
+---
+
+<Layout title="Welcome to Astro.">
+	<Banner />
+	<div class="py-4 px-20">
+		<MainCategorys />
+		<BetSellerProds />
+	</div>
+</Layout>
+
+<style>
+	
+</style>

@@ -1,0 +1,18 @@
+---
+import { Image } from 'astro:assets';
+import bannerImg from '@/assets/pet_baner.png'
+// ui components
+import MainLink from '@/ui/MainLink.astro';
+---
+<div class="bg-colorBgFront flex justify-center items-center gap-10 py-5 px-6">
+  <Image 
+    class=""
+    src={bannerImg} 
+    alt="banner de dos perritos"/>
+  <div class="font-ffPrimary text-colorText">
+    <h1 class="text-sm uppercase mb-2">Todos los productos para tus mascotas</h1>
+    <h3 class="text-5xl mb-8 font-ffText font-bold max-w-[450px]">Se Angel de un Peludito</h3>
+    <MainLink text='Conocer Más' link='#' />
+  </div>
+
+</div>

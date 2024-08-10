@@ -1,0 +1,26 @@
+---
+interface Props {
+  text: string,
+  link: string
+}
+
+const { text, link } = Astro.props;
+---
+
+<a 
+  href={link} 
+  class="flex items-center justify-center
+        px-10 bg-colorAction text-white rounded-[20px] font-bold max-btn h-10">
+    <span class="text">{text}</span>
+</a>
+
+<style>
+  .max-btn {
+    max-width: fit-content;
+  }
+  .text{ 
+    text-wrap: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+</style>

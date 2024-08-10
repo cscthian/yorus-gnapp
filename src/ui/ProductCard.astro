@@ -1,0 +1,26 @@
+---
+import { Image } from "astro:assets";
+
+interface Props {
+  img: string;
+  link: "#";
+  name: string;
+  price: number;
+}
+
+const { img, link, name, price } = Astro.props;
+---
+
+<div class="flex flex-col items-center justify-center mb-10">
+  <Image 
+    src={img} 
+    alt="Un pájaro." 
+    width="250" 
+    height="250"
+    class="h-[250px]" 
+  />
+  <a href={link}
+      class="font-ffText font-bold capitalize mt-4 text-colorText
+             text-lg hover:text-colorBgFront">{name}</a>
+  <p class="font-ffPrimary font-bold text-colorAction text-xl m-2">$ {price}</p>
+</div>
