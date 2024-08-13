@@ -3,14 +3,18 @@ import Layout from '../layouts/Layout.astro';
 import Banner from '@/components/home/Banner.astro';
 import MainCategorys from '@/components/home/MainCategorys.astro';
 import BetSellerProds from '@/components/home/BetSellerProds.astro';
+import PopularCategories from '@/components/categorys/PopularCategories.astro';
+import AdoptionHomeSection from '@/components/home/AdoptionHomeSection.astro';
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Tienda de Mascotas Cusco - Yoru">
 	<Banner />
-	<div class="py-4 px-20">
+	<div class="py-4 px-8 lg:px-6 xl:px-20">
 		<MainCategorys />
 		<BetSellerProds />
+		<PopularCategories />
 	</div>
+	<AdoptionHomeSection />
 </Layout>
 
 <style>

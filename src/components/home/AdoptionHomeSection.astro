@@ -1,0 +1,42 @@
+---
+import { Image } from "astro:assets";
+import adoptionImg from '@/assets/adopta.png'
+import MdiCall from '@/icons/MdiCall.astro'
+import IcSharpAttachEmail from '@/icons/IcSharpAttachEmail.astro'
+import ArcticonsEmojiBabyBottle from '@/icons/ArcticonsEmojiBabyBottle.astro'
+import MdiPets from "@/icons/MdiPets.astro";
+---
+
+<div class="grid grid-cols-1 lg:grid-cols-2 bg-colorBgFront gap-4">
+  <div class="flex justify-center">
+    <Image 
+      src={adoptionImg}
+      alt="Imagen de perro y gato"
+    />
+  </div>
+  <div class="p-6">
+    <h3 class="text-colorAction text-3xl font-bold font-ffPrimary mb-4">Adopta un Peludito</h3>
+    <p class="font-ffText text-lg mb-4">
+      ¡Inscríbete ahora y aprovecha la oportunidad de adoptar o poner en adopción cachorros! Nosotros nos encargamos de conectarte con una lista de interesados, asegurando que cada mascota encuentre un hogar amoroso. ¡Haz parte de esta comunidad y ayuda a cambiar vidas!
+    <div class="grid grid-cols-1 md:grid-cols-2">
+      <div class="flex items-center gap-4 mb-6">
+        <MdiPets size="2em" />
+        <p class="font-ffText font-bold text-colorText">Adopta un peludito</p>
+      </div>
+      <div class="flex items-center gap-4 mb-6">
+        <ArcticonsEmojiBabyBottle size="2em" />
+        <p class="font-ffText font-bold text-colorText">Busca una familia para tus cachorros</p>
+      </div>
+      <div class="flex items-center gap-4 mb-6">
+        <MdiCall size="2em" />
+        <p class="font-ffText font-bold text-colorText">Nos comunicamos contigo por WhatsApp</p>
+      </div>
+      <div class="flex items-center gap-4 mb-6">
+        <IcSharpAttachEmail size="2em" />
+        <p class="font-ffText font-bold text-colorText">Te Notificamos por Em-mail</p>
+      </div>
+    </div>
+    <a href="#" class="block bg-colorAction text-colorBg 
+                      font-bold px-10 py-3 rounded-[20px] w-fit font-ffPrimary">Inscribirme</a>
+  </div>
+</div>

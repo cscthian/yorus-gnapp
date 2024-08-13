@@ -1,14 +1,17 @@
 ---
 import BestSellerMenu from '@/components/home/BestSellerMenu.vue';
 import ProductCard from "@/ui/ProductCard.astro"
+// ui
+import UTitleSection from '@/ui/titles/UTitleSection.astro';
+//props
 const listBestSeller = [1,2,3,4,6,7,8]
 ---
 <div>
-  <h3 class="font-ffText font-bold text-3xl text-center my-10 text-colorText">Articulos Más Vendidos</h3>
+  <UTitleSection text="Articulos Más Vendidos" />
   <!-- aqui un componente de 3 pestañas -->
   <BestSellerMenu client:visible={{rootMargin: "100px"}}/>
    <!-- fin pestañas dinamicas -->
-  <div id="betSeller" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+  <div id="betSeller" class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
     {
       listBestSeller.map((item, index) => (
         <ProductCard 

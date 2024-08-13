@@ -7,41 +7,41 @@ import petBony from '@/assets/pet_bony.png';
 import MainLink from '@/ui/MainLink.astro';
 ---
 
-<div class="flex gap-6 mt-8">
-  <div class="flex items-end bg-colorBgCard">
+<div class="flex flex-col justify-center flex-wrap md:flex-row gap-4 mt-8">
+  <div class="flex justify-center items-end bg-colorBgCard">
     <div class="p-4">
-      <h3 class="text-4xl max-w-[150px] mb-6 font-ffPrimary 
+      <h3 class="text-2xl lg:text-3xl xl:text-4xl max-w-[150px] mb-6 font-ffPrimary 
           font-bold text-colorText">Para Perros</h3>
       <MainLink  link='#' text='Ver Catálogo' />
     </div>
     <Image  
       src={petDog}
       alt="perrito"
-      class="h-[400px]"
+      class="h-[250px] w-[200px] md:w-[130px] lg:w-[100px] lg:h-[200px] xl:w-[230px] xl:h-[400px]"
     />
   </div>
-  <div class="flex items-end bg-colorBgCard">
+  <div class="flex justify-center items-end bg-colorBgCard">
     <div class="p-4">
-      <h3 class="text-4xl max-w-[150px] mb-6 font-ffPrimary 
+      <h3 class="text-2xl lg:text-3xl xl:text-4xl max-w-[150px] mb-6 font-ffPrimary 
       font-bold text-colorText">Para Gatos</h3>
       <MainLink  link='#' text='Ver Catálogo' />
     </div>
     <Image  
       src={petCat}
       alt="gatitos"
-      class="h-[400px]"
+      class="h-[250px] w-[200px] md:w-[120px]  lg:w-[100px] lg:h-[200px] xl:w-[230px] xl:h-[400px]"
     />
   </div>
-  <div class="flex items-end bg-colorBgCard">
+  <div class="flex justify-center items-end bg-colorBgCard">
     <div class="p-4">
-      <h3 class="text-4xl max-w-[150px] mb-6 font-ffPrimary 
+      <h3 class="text-2xl lg:text-3xl xl:text-4xl max-w-[150px] mb-6 font-ffPrimary 
       font-bold text-colorText">Otros Peluditos</h3>
       <MainLink  link='#' text='Ver Catálogo' />
     </div>
     <Image  
       src={petBony}
       alt="wonejitos"
-      class="h-[400px] "
+      class="h-[170px] w-[200px] lg:w-[100px] lg:h-[150px] xl:w-[230px] xl:h-[400px]"
     />
   </div>
 </div>
