@@ -10,16 +10,16 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class="m-w-[100%] w-fit">
+  <body class="w-full">
     <Header />
     <div class="min-h-[95vh]">
       <slot />
@@ -28,9 +28,6 @@ const { title } = Astro.props;
   </body>
 </html>
 <style is:global>
-  body {
-    overflow-x: hidden;
-  }
   code {
     font-family:
       Menlo,
