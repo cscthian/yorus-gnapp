@@ -1,0 +1,2 @@
+// api/tienda/categorias/lista/
+// 
