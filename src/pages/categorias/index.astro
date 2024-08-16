@@ -1,6 +1,36 @@
 ---
 import Layout from "@/layouts/Layout.astro";
+import LayoutContent from "@/layouts/LayoutContent.astro";
+import { Image } from "astro:assets";
+// components
+import UTitlePage from "@/ui/titles/UTitlePage.astro";
+// db
+import { apiListCategories } from '@/api/apiCategories'
+
+// data
+const listCategories = await apiListCategories()
+
+
 ---
 <Layout title="Productos para mascotas">
-  <h1>aqui lista de categorias para moscotas</h1>
+  <LayoutContent>
+    <UTitlePage  title="Encuentra todo para tu compañero" />
+    <div class="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+      { listCategories.map((category) => (
+        <div class="flex items-center justify-center flex-col">
+          <Image 
+            src={category.image}
+            alt={category.name}
+            width={150}
+            height={150}
+            class="w-32 h-32 p-2 bg-colorBgCard rounded-full lg:w-[180px] lg:h-[180px]"
+          />
+          <a 
+            href={`/${category.name_unique}`}
+            class="my-2 capitalize text-colorAction font-ffPrimary text-lg
+                  hover:text-colorText">{ category.name }</a>
+        </div>
+      )) }
+    </div>
+  </LayoutContent>
 </Layout>

@@ -1,17 +1,56 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import LayoutContent from "@/layouts/LayoutContent.astro";
+import { apiListCategories } from '@/api/apiCategories';
+import { apiListProdsCategory } from '@/api/apiProducts';
+import type { Products } from '@/api/typeModels';
+// components
+import CardProd from '@/components/CardProd.astro';
+import UTitlePage from '@/ui/titles/UTitlePage.astro';
 
-export function getStaticPaths() {
-  return[
-    {params: {category: 'perros'}},
-    {params: {category: 'gatos'}},
-    {params: {category: 'exoticos'}},
-  ]
+// type
+interface ParamsInterface {
+  params: {
+    category: string;
+  };
 }
 
+export async function getStaticPaths() {
+  const categories = await apiListCategories()
+
+  const paths: ParamsInterface[] = []
+
+  categories.map((categories) => {
+    paths.push(
+      {params: {category: categories.name_unique}}
+    )
+  })
+
+  return paths
+}
+// props
 const { category } = Astro.params;
+// methods
+const listPrimordialProds:Products[] = await apiListProdsCategory(category, '', 'True')
+
 ---
 
 <Layout title=`Articulos y accesorios para ${category}`>
-  <h1>aqui catalogo de { category }</h1>
+  <LayoutContent>
+    <main>
+      <UTitlePage 
+        title={`Productos para ${category}`}
+      />
+      <section class="p-2">
+        <h3 class="text-colorText font-ffText text-lg mb-2">Más vendidos</h3>
+        <div class="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
+          {listPrimordialProds.map((product) => (
+            <CardProd 
+              product={product}
+            />
+          ))}  
+        </div>
+      </section>
+    </main>
+  </LayoutContent>
 </Layout>

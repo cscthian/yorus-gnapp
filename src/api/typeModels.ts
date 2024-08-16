@@ -23,6 +23,7 @@ export interface Products {
   colors:       Colors[];
   category:     Categorys[];
   size:         Size[];
+  main_category: string | null;
   main_image:   string | null;
   second_image: string | null;
   third_image:  string | null;
